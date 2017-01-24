@@ -10,9 +10,9 @@ app.config(function ($routeProvider) {
             //controller: 'FindController',
             templateUrl: './views/find.html'
         })
-        .when('/update', {
+        .when('/create', {
             //controller: 'UpdateController',
-            templateUrl: './views/update.html'
+            templateUrl: './views/create.html'
         })
         .otherwise({
             redirectTo: '/'
