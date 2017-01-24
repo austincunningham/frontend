@@ -1,0 +1,36 @@
+<table class="ui very basic collapsing celled table">
+    <thead>
+    <tr><th><i class="user icon"></i> User</th>
+        <th><i class="world icon"></i>Location</th>
+        <th><i class="call icon"></i>Contact</th>
+        <th><i class="male icon"></i><i class="female icon"></i> Gender</th>
+        <th><i class="photo icon"></i>Photo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="user in allusers" >
+        <td>
+            <h4 class="ui image header">
+                <img ng-src="{{user.picture.thumbnail}}" class="ui mini rounded image">
+                <div class="content">
+                    {{user.name.title | uppercase}} {{user.name.first | uppercase}} {{user.name.last | uppercase }}
+                    <div class="sub header">{{user.email}}
+                    </div>
+                </div>
+            </h4></td>
+        <td class="ui list">
+            <div class="item">Street: {{user.location.street}}</div>
+            <div class="item">City: {{user.location.city}}</div>
+            <div class="item">State: {{user.location.state}}</div>
+            <div class="item">Zip: {{user.location.zip}}</div>
+        </td>
+        <td class="ui list">
+            <div class="item">Phone: {{user.phone}}</div>
+            <div class="item">Mobile: {{user.cell}}</div>
+
+        </td>
+        <td><i class="{{user.gender}} icon"></i>{{user.gender}}</td>
+        <td><img ng-src="{{user.picture.medium}}"></td>
+    </tr>
+    </tbody>
+</table>

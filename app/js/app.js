@@ -3,13 +3,16 @@ var app = angular.module('FrontendApp', ['ngRoute']);
 
 app.config(function ($routeProvider) {
     $routeProvider
+        .when('/', {
+            templateUrl: './views/home.html'
+        })
         .when('/find', {
             //controller: 'FindController',
             templateUrl: './views/find.html'
         })
         .when('/update', {
             //controller: 'UpdateController',
-            templateUrl: 'views/update.html'
+            templateUrl: './views/update.html'
         })
         .otherwise({
             redirectTo: '/'
