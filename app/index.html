@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js"></script>
+  <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+  <link href="css/main.css" rel="stylesheet" />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+  <title>My AngularJS App</title>
+
+</head>
+<body ng-app="FrontendApp">
+
+
+<nav class="ui inverted menu">
+  <header class="header item"><a href="/"> FrontEnd </a></header>
+  <div class="right menu">
+    <a id="home"   class= "item" href="#/"> All Users</a>
+    <a id="report" class= "item" href="#/find"> Find User</a>
+    <a id="settings" class= "item" href="#/update"> Update</a>
+  </div>
+</nav>
+
+  <div class="main" ng-controller="MainController">
+    <div class="container">
+
+<!--      <div ng-repeat="user in allusers" class="ui list">
+          <div class="item">{{ user.email }}</div>
+          <div class="item">{{ user.name.first }}</div>
+          <div class="item">{{ user.name.last }}</div>
+      </div> -->
+
+
+
+    </div>
+
+
+    <table class="ui very basic collapsing celled table">
+        <thead>
+        <tr><th><i class="user icon"></i> User</th>
+            <th><i class="world icon"></i>Location</th>
+            <th><i class="call icon"></i>Contact</th>
+            <th><i class="male icon"></i><i class="female icon"></i> Gender</th>
+            <th><i class="photo icon"></i>Photo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in allusers" >
+            <td>
+                <h4 class="ui image header">
+                    <img ng-src="{{user.picture.thumbnail}}" class="ui mini rounded image">
+                    <div class="content">
+                        {{user.name.title | uppercase}} {{user.name.first | uppercase}} {{user.name.last | uppercase }}
+                        <div class="sub header">{{user.email}}
+                        </div>
+                    </div>
+                </h4></td>
+            <td class="ui list">
+                <div class="item">Street: {{user.location.street}}</div>
+                <div class="item">City: {{user.location.city}}</div>
+                <div class="item">State: {{user.location.state}}</div>
+                <div class="item">Zip: {{user.location.zip}}</div>
+            </td>
+            <td class="ui list">
+                <div class="item">Phone: {{user.phone}}</div>
+                <div class="item">Mobile: {{user.cell}}</div>
+
+            </td>
+            <td><i class="{{user.gender}} icon"></i>{{user.gender}}</td>
+            <td><img ng-src="{{user.picture.medium}}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Modules -->
+<script src="js/app.js"></script>
+
+<!-- Controllers -->
+<script src="js/controllers/MainController.js"></script>
+
+<!-- Services -->
+<script src="js/services/users.js"></script>
+
+</body>
+</html>
