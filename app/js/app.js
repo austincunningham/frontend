@@ -11,7 +11,7 @@ app.config(function ($routeProvider) {
             templateUrl: './views/find.html'
         })
         .when('/delete', {
-            //controller: 'FindController',
+            controller: 'DeleteController',
             templateUrl: './views/delete.html'
         })
         .when('/create', {
