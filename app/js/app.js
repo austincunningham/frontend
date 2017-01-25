@@ -10,8 +10,12 @@ app.config(function ($routeProvider) {
             //controller: 'FindController',
             templateUrl: './views/find.html'
         })
+        .when('/delete', {
+            //controller: 'FindController',
+            templateUrl: './views/delete.html'
+        })
         .when('/create', {
-            //controller: 'UpdateController',
+            controller: 'CreateController',
             templateUrl: './views/create.html'
         })
         .otherwise({
