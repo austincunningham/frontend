@@ -6,14 +6,17 @@
         <div class="two fields">
             <div class="field">
                 <div class="column"  >
-                    <div class="ui selection dropdown" id="deleteUser">
+                    <!--<div class="ui selection dropdown" id="deleteUser">
                         <input name="deleteUser" type="hidden">
                         <div class="default text">Select User</div>
                         <i class="dropdown icon"></i>
-                        <div class="menu" >
-                                <div class="item userlist" ng-repeat="user in allusers" data-value={{user.id}}>{{user.email}} </div>
+                        <div class="menu">
+                                <div class="item userlist" ng-repeat="user in allusers" value={{user.id}}>{{user.email}} </div>
                         </div>
-                    </div>
+                    </div>-->
+                    <select>
+                        <option ng-repeat="user in allusers" value={{user.id}}>{{user.email}}</option>
+                    </select>
                 </div>
             </div>
         </div>

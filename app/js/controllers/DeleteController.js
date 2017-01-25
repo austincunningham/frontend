@@ -2,7 +2,7 @@
  * Created by austin on 24/01/2017.
  */
 app.controller('DeleteController', function($scope, $http) {
-    $scope.DeleteUser = function (id) {
+    $scope.DeleteUser = function () {
         //$.param jQuery function to serialize data to JSON
         var data = id;
 
