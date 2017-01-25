@@ -14,13 +14,14 @@
                                 <div class="item userlist" ng-repeat="user in allusers" value={{user.id}}>{{user.email}} </div>
                         </div>
                     </div>-->
-                    <select>
+                    <select ng-model="id">
                         <option ng-repeat="user in allusers" value={{user.id}}>{{user.email}}</option>
                     </select>
                 </div>
             </div>
         </div>
         <button class="ui black submit button" ng-click="DeleteUser()">Delete User <i class="trash icon"></i></button>
+        {{id}}
     </section>
 </section>
 <script>$('.ui.selection.dropdown').dropdown();</script>
