@@ -5,11 +5,9 @@ app.controller('FindController', function ($scope, $http) {
     /*$scope.firstName = 'First Name';
     $scope.lastName = 'Last Name';
     $scope.email = 'Email';*/
+    var id = $scope._id;
 
     $scope.FindUser = function () {
-        var id = $scope._id;
-
-
         $http.get('http://localhost:8000/users/'+ id)
             .success(function(data) {
                 $scope.firstName = data.name.first;
@@ -22,5 +20,13 @@ app.controller('FindController', function ($scope, $http) {
             });
 
     };
+
+    $scope.UpdateData = function() {
+
+        $http.put('http://localhost:8000/users/'+id, data )
+            .success(function(data) {
+
+            });
+    }
 
 });

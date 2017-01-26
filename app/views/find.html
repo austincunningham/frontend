@@ -1,4 +1,4 @@
-<h1>This is the Find page</h1>
+<h1>This is the Find and Update page</h1>
 <div class="ui rasied segment" ng-controller="FindController">
     <div class="ui rasied segment">
         <div class="ui form">
@@ -28,10 +28,9 @@
                     <label>Last Name</label>
                     <input name="email" placeholder="{{email}}" type="text" ng-model="email">
                 </div>
-                <button class="ui black button" type="submit" ng-click="SendData()">Submit</button>
+                <button class="ui black button" type="submit" ng-click="UpdateData()">Submit</button>
             </form>
 
-            <h3>{{ PostDataResponse }}</h3>
 
             {{email}} {{firstName}} {{lastName}}
         </div>
