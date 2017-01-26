@@ -11,7 +11,6 @@ app.controller('DeleteController', function($scope, $http) {
     };
     $scope.reload();
     $scope.DeleteUser = function () {
-        //$.param jQuery function to serialize data to JSON
         data = $scope.id ;
 
         $http.delete('http://localhost:8000/users/'+ data)

@@ -1,1 +1,39 @@
 <h1>This is the Find page</h1>
+<div class="ui rasied segment" ng-controller="FindController">
+    <div class="ui rasied segment">
+        <div class="ui form">
+            <form>
+                <div class="ui right icon input field">
+                    <input placeholder="_id" name="name" type="text" ng-model="_id"> <i
+                        class="user icon"></i>
+                </div>
+                <button class="ui black submit button" ng-click="FindUser()">Search <i class="search icon"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="ui grid container" ng-controller="FindController">
+
+        <div class="eight wide column">
+            <form class="ui form">
+                <div class="field">
+                    <label>First Name</label>
+                    <input name="firstName" placeholder="{{firstName}}" type="text" ng-model="firstName">
+                </div>
+                <div class="field">
+                    <label>Last Name</label>
+                    <input name="lastName" placeholder="{{lastName}}" type="text" ng-model="lastName">
+                </div>
+                <div class="field">
+                    <label>Last Name</label>
+                    <input name="email" placeholder="{{email}}" type="text" ng-model="email">
+                </div>
+                <button class="ui black button" type="submit" ng-click="SendData()">Submit</button>
+            </form>
+
+            <h3>{{ PostDataResponse }}</h3>
+
+            {{email}} {{firstName}} {{lastName}}
+        </div>
+    </div>
+</div>
