@@ -3,7 +3,6 @@
  */
 app.controller('CreateController', function($scope, $http) {
     $scope.SendData = function () {
-        //$.param jQuery function to serialize data to JSON
         var data = {
             name:{
                 first: $scope.firstName,
@@ -16,7 +15,10 @@ app.controller('CreateController', function($scope, $http) {
         $http.post('http://localhost:8000/users/', data)
             .success(function(data) {
                 $scope.PostDataResponse = data.name.first +" "+ data.name.last + " was created";
-                data = {};
+                $scope.firstName = '';
+                $scope.lastName = '';
+                $scope.email = '';
+
                 return data;
             })
             .error(function(err){
