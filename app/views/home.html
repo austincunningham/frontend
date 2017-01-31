@@ -33,7 +33,11 @@
 
                 </td>
                 <td><i class="{{user.gender}} icon"></i>{{user.gender}}</td>
-                <td><img ng-click="truefalse()" ng-src="{{user.picture.medium}}"></td>
+                <td>
+                    <img ng-hide="value" ng-src="{{user.picture.medium}}">
+                    <img ng-show="value" ng-src="{{user.picture.large}}">
+                    <button class="ui mini black button" ng-click="value = !value">Big Photo</button>
+                </td>
             </tr>
             </tbody>
         </table>

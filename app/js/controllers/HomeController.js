@@ -11,11 +11,5 @@ app.controller('HomeController', function($scope, $http) {
     };
     $scope.reload();
 
-    $scope.truefalse = function() {
-        var show;
-        i++;
-        if (i % )
-        $scope.show = true;
-    };
 
 });
